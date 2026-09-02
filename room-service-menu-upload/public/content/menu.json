@@ -14,15 +14,20 @@
           "name": "Something Light",
           "description": "Crisp onion rings battered and fried until crunchy.",
           "price": "R 50",
-          "dietary": ["vegetarian"]
+          "dietary": [
+            "vegetarian"
+          ]
         },
         {
           "name": "Soup of the Day",
           "description": "Our Soup of the Day is suitable for those following a vegetarian diet. Please ask your waiter what the Chef has prepared today. Served with a fresh bread roll and butter.",
           "price": "R 75",
-          "dietary": ["vegetarian"]
+          "dietary": [
+            "vegetarian"
+          ]
         }
-      ]
+      ],
+      "bannerImage": "/assets/uploads/screenshot-2026-09-02-225441.png"
     },
     {
       "name": "Salads",
@@ -32,13 +37,17 @@
           "name": "Tabbouleh",
           "description": "This refreshing Mediterranean dish is crisp, vibrant, nutritious and perfect as a light, healthy meal. Packed with parsley, bulgur wheat, chopped tomatoes and diced onion, it is brought to life by a bright, zesty lemon-olive oil dressing.",
           "price": "R 95",
-          "dietary": ["vegan"]
+          "dietary": [
+            "vegan"
+          ]
         },
         {
           "name": "Greek Salad",
           "description": "A rustic dish featuring ripe tomato wedges, diced cucumber, sliced red onion, feta cheese and olives. Topped with garlic croutons and dressed with balsamic vinegar and olive oil.",
           "price": "R 105",
-          "dietary": ["vegetarian"]
+          "dietary": [
+            "vegetarian"
+          ]
         }
       ]
     },
@@ -56,7 +65,9 @@
           "name": "Mushroom and Green Peas",
           "description": "Mushroom and green peas simmered in a reduced smoked paprika and soy oat milk-coconut cream sauce, served topped with smoky coconut shavings.",
           "price": "R 150",
-          "dietary": ["vegan"]
+          "dietary": [
+            "vegan"
+          ]
         },
         {
           "name": "Bolognese",
@@ -64,7 +75,8 @@
           "price": "R 175",
           "dietary": []
         }
-      ]
+      ],
+      "bannerImage": "/assets/uploads/screenshot-2026-09-02-225531.png"
     },
     {
       "name": "Mains",
@@ -74,13 +86,17 @@
           "name": "The Best Bean Balls",
           "description": "Kidney beans, herbs and spices, oats and chickpea flour well blended and carefully cooked, and served with our homemade tomato sauce.",
           "price": "R 105",
-          "dietary": ["vegan"]
+          "dietary": [
+            "vegan"
+          ]
         },
         {
           "name": "Grilled Chicken Leg Quarter",
           "description": "Basted with a Portuguese-style sauce and char-grilled.",
           "price": "R 130",
-          "dietary": ["spicy"]
+          "dietary": [
+            "spicy"
+          ]
         },
         {
           "name": "Pork Ribs",
@@ -92,9 +108,12 @@
           "name": "Lamb Curry",
           "description": "Slow-cooked in an aromatic sauce spiced with turmeric, cumin and coriander, ginger, garlic and tomato, finished with fresh coriander and served with a variety of sambals and a papadum.",
           "price": "R 220",
-          "dietary": ["spicy"]
+          "dietary": [
+            "spicy"
+          ]
         }
-      ]
+      ],
+      "bannerImage": "/assets/uploads/screenshot-2026-09-02-225631.png"
     },
     {
       "name": "From the Grill",
@@ -122,7 +141,9 @@
           "name": "Banana Brownies",
           "description": "Incredibly delicious, completely plant-based, marbled with peanut butter and sprinkled with cinnamon.",
           "price": "R 95",
-          "dietary": ["vegan"]
+          "dietary": [
+            "vegan"
+          ]
         },
         {
           "name": "Passionfruit Cheesecake",
@@ -130,7 +151,8 @@
           "price": "R 105",
           "dietary": []
         }
-      ]
+      ],
+      "bannerImage": "/assets/uploads/screenshot-2026-09-02-230337.png"
     }
   ]
 }
