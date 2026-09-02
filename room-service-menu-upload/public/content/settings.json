@@ -1,11 +1,11 @@
 {
-  "font": "montserrat",
-  "headerImage": "",
   "footerImage": "",
-  "darkColour": "#0b2e27",
-  "mainColour": "#123f34",
   "highlightColour": "#28715c",
+  "darkColour": "#0b2e27",
+  "mainColour": "#1c4b34",
   "goldColour": "#b9934b",
-  "backgroundColour": "#f8f5ee",
-  "textColour": "#18211e"
+  "headerImage": "",
+  "font": "montserrat",
+  "textColour": "#18211e",
+  "backgroundColour": "#f8f5ee"
 }
