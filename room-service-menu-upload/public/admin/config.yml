@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Khensani29/room-service-menu
   branch: main
-  base_url: https://milners-restaurant-menu.marketing-a5a.workers.dev
+  base_url: https://milners-cms-auth.marketing-a5a.workers.dev
   auth_endpoint: auth
 
 publish_mode: simple
