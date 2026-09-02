@@ -10,6 +10,7 @@ const fallbackMenu = {
 
 const fallbackSettings = {
   font: "montserrat",
+  logo: "",
   headerImage: "",
   footerImage: "",
   darkColour: "#0b2e27",
@@ -81,6 +82,16 @@ const renderSiteBanners = (settings) => {
 const applySettings = (settings) => {
   const values = { ...fallbackSettings, ...settings };
   const root = document.documentElement;
+
+  const logo = document.getElementById("site-logo");
+
+  if (values.logo) {
+    logo.src = values.logo;
+    logo.hidden = false;
+  } else {
+    logo.hidden = true;
+  }
+
   const colourPattern = /^#[0-9a-f]{6}$/i;
 
   const colours = {
