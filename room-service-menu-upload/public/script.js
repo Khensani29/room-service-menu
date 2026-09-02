@@ -8,6 +8,24 @@ const fallbackMenu = {
   categories: [],
 };
 
+const fallbackSettings = {
+  font: "montserrat",
+  headerImage: "",
+  footerImage: "",
+  darkColour: "#0b2e27",
+  mainColour: "#123f34",
+  highlightColour: "#28715c",
+  goldColour: "#b9934b",
+  backgroundColour: "#f8f5ee",
+  textColour: "#18211e",
+};
+
+const fonts = {
+  montserrat: '"Montserrat", Arial, sans-serif',
+  georgia: 'Georgia, "Times New Roman", serif',
+  arial: "Arial, Helvetica, sans-serif",
+};
+
 const slugify = (value) =>
   value
     .toLowerCase()
@@ -22,11 +40,95 @@ const makeElement = (tag, className, text) => {
   return element;
 };
 
+const addImage = (container, imagePath, altText) => {
+  if (!imagePath) {
+    container.classList.add("image-placeholder");
+    container.setAttribute("aria-hidden", "true");
+    return;
+  }
+
+  const image = makeElement("img");
+  image.src = imagePath;
+  image.alt = altText;
+  image.loading = "lazy";
+  container.appendChild(image);
+};
+
+const renderSiteBanners = (settings) => {
+  const headerBanner = makeElement(
+    "div",
+    "site-banner site-banner--header",
+  );
+  addImage(
+    headerBanner,
+    settings.headerImage,
+    "Room service presentation",
+  );
+  document.querySelector("main").prepend(headerBanner);
+
+  const footerBanner = makeElement(
+    "div",
+    "site-banner site-banner--footer",
+  );
+  addImage(
+    footerBanner,
+    settings.footerImage,
+    "Room service presentation",
+  );
+  document.querySelector("footer").before(footerBanner);
+};
+
+const applySettings = (settings) => {
+  const values = { ...fallbackSettings, ...settings };
+  const root = document.documentElement;
+  const colourPattern = /^#[0-9a-f]{6}$/i;
+
+  const colours = {
+    "--green-950": values.darkColour,
+    "--green-900": values.mainColour,
+    "--green-700": values.highlightColour,
+    "--gold": values.goldColour,
+    "--cream": values.backgroundColour,
+    "--ink": values.textColour,
+  };
+
+  Object.entries(colours).forEach(([property, value]) => {
+    if (colourPattern.test(value || "")) {
+      root.style.setProperty(property, value);
+    }
+  });
+
+  if (
+    values.font === "montserrat" &&
+    !document.getElementById("montserrat-font")
+  ) {
+    const fontLink = makeElement("link");
+    fontLink.id = "montserrat-font";
+    fontLink.rel = "stylesheet";
+    fontLink.href =
+      "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
+    document.head.appendChild(fontLink);
+  }
+
+  root.style.setProperty(
+    "--site-font",
+    fonts[values.font] || fonts.montserrat,
+  );
+
+  renderSiteBanners(values);
+};
+
 const renderServiceDetails = (menu) => {
-  document.getElementById("menu-title").textContent = menu.title || fallbackMenu.title;
+  document.getElementById("menu-title").textContent =
+    menu.title || fallbackMenu.title;
+
   document.getElementById("availability").textContent =
-    menu.service?.availability || fallbackMenu.service.availability;
-  document.getElementById("dial").textContent = menu.service?.dial || fallbackMenu.service.dial;
+    menu.service?.availability ||
+    fallbackMenu.service.availability;
+
+  document.getElementById("dial").textContent =
+    menu.service?.dial || fallbackMenu.service.dial;
+
   document.getElementById("wait-time").textContent =
     menu.service?.waitTime || fallbackMenu.service.waitTime;
 };
@@ -36,31 +138,58 @@ const renderNavigation = (categories) => {
   nav.replaceChildren();
 
   categories.forEach((category) => {
-    const link = makeElement("a", "category-link", category.name);
+    const link = makeElement(
+      "a",
+      "category-link",
+      category.name,
+    );
     link.href = `#${slugify(category.name)}`;
     nav.appendChild(link);
   });
 };
 
 const renderTag = (tagName) => {
-  const label = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-  return makeElement("span", `tag${tagName === "spicy" ? " tag--spicy" : ""}`, label);
+  const label =
+    tagName.charAt(0).toUpperCase() + tagName.slice(1);
+
+  return makeElement(
+    "span",
+    `tag${tagName === "spicy" ? " tag--spicy" : ""}`,
+    label,
+  );
 };
 
 const renderItem = (item) => {
   const article = makeElement("article", "menu-item");
   const topLine = makeElement("div", "menu-item__topline");
+
   topLine.appendChild(makeElement("h3", "", item.name));
-  topLine.appendChild(makeElement("span", "menu-item__price", item.price));
+  topLine.appendChild(
+    makeElement("span", "menu-item__price", item.price),
+  );
+
   article.appendChild(topLine);
 
   if (item.description) {
-    article.appendChild(makeElement("p", "menu-item__description", item.description));
+    article.appendChild(
+      makeElement(
+        "p",
+        "menu-item__description",
+        item.description,
+      ),
+    );
   }
 
-  if (Array.isArray(item.dietary) && item.dietary.length) {
+  if (
+    Array.isArray(item.dietary) &&
+    item.dietary.length
+  ) {
     const tags = makeElement("div", "tags");
-    item.dietary.forEach((tag) => tags.appendChild(renderTag(tag)));
+
+    item.dietary.forEach((tag) =>
+      tags.appendChild(renderTag(tag)),
+    );
+
     article.appendChild(tags);
   }
 
@@ -68,7 +197,10 @@ const renderItem = (item) => {
 };
 
 const renderMenu = (menu) => {
-  const categories = Array.isArray(menu.categories) ? menu.categories : [];
+  const categories = Array.isArray(menu.categories)
+    ? menu.categories
+    : [];
+
   renderServiceDetails(menu);
   renderNavigation(categories);
 
@@ -80,30 +212,76 @@ const renderMenu = (menu) => {
     section.id = slugify(category.name);
 
     const heading = makeElement("div", "section-heading");
-    heading.appendChild(makeElement("h2", "", category.name));
+    heading.appendChild(
+      makeElement("h2", "", category.name),
+    );
     section.appendChild(heading);
 
+    const banner = makeElement("div", "section-banner");
+    addImage(
+      banner,
+      category.bannerImage,
+      `${category.name} selection`,
+    );
+    section.appendChild(banner);
+
     if (category.note) {
-      section.appendChild(makeElement("p", "section-note", category.note));
+      section.appendChild(
+        makeElement("p", "section-note", category.note),
+      );
     }
 
-    (category.items || []).forEach((item) => section.appendChild(renderItem(item)));
+    (category.items || []).forEach((item) =>
+      section.appendChild(renderItem(item)),
+    );
+
     content.appendChild(section);
   });
 };
 
+const loadSettings = async () => {
+  try {
+    const response = await fetch(
+      `/content/settings.json?v=${Date.now()}`,
+      { cache: "no-store" },
+    );
+
+    if (!response.ok) {
+      throw new Error("Settings could not be loaded");
+    }
+
+    applySettings(await response.json());
+  } catch (error) {
+    applySettings(fallbackSettings);
+  }
+};
+
 const loadMenu = async () => {
   try {
-    const response = await fetch(`/content/menu.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error("Menu could not be loaded");
+    const response = await fetch(
+      `/content/menu.json?v=${Date.now()}`,
+      { cache: "no-store" },
+    );
+
+    if (!response.ok) {
+      throw new Error("Menu could not be loaded");
+    }
+
     renderMenu(await response.json());
   } catch (error) {
     renderServiceDetails(fallbackMenu);
-    const content = document.getElementById("menu-content");
+
+    const content =
+      document.getElementById("menu-content");
+
     content.replaceChildren(
-      makeElement("p", "error-message", "The menu is temporarily unavailable. Please dial 17 for assistance."),
+      makeElement(
+        "p",
+        "error-message",
+        "The menu is temporarily unavailable. Please dial 17 for assistance.",
+      ),
     );
   }
 };
 
-loadMenu();
+Promise.all([loadSettings(), loadMenu()]);
