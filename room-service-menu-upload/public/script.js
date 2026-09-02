@@ -10,7 +10,10 @@ const fallbackMenu = {
 
 const fallbackSettings = {
   font: "montserrat",
-  logo: "",
+  .logo: "",
+  hotelName: "Holiday Inn Johannesburg Sunnyside Park",
+  welcomeText: "Enjoy a relaxed meal from the comfort of your room.",
+  footerText: "To place an order, dial 17 on your room telephone.",
   headerImage: "",
   footerImage: "",
   darkColour: "#0b2e27",
@@ -92,6 +95,14 @@ const applySettings = (settings) => {
     logo.hidden = true;
   }
 
+  document.querySelector(".property-name").textContent =
+    values.hotelName;
+
+  document.querySelector(".welcome-copy").textContent =
+    values.welcomeText;
+
+  document.querySelector("footer p").textContent =
+    values.footerText;
   const colourPattern = /^#[0-9a-f]{6}$/i;
 
   const colours = {
