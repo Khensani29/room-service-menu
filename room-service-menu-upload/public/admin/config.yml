@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: Khensani29/room-service-menu
+  branch: main
+  base_url: https://milners-restaurant-menu.marketing-a5a.workers.dev
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: room_service
+    label: Room Service
+    files:
+      - name: menu
+        label: Menu and Service Details
+        file: public/content/menu.json
+        format: json
+        fields:
+          - { label: Menu Title, name: title, widget: string }
+          - label: Service Details
+            name: service
+            widget: object
+            fields:
+              - { label: Availability, name: availability, widget: string }
+              - { label: Ordering Instruction, name: dial, widget: string }
+              - { label: Waiting Time, name: waitTime, widget: string }
+          - label: Menu Sections
+            name: categories
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Section Name, name: name, widget: string }
+              - { label: Section Note, name: note, widget: text, required: false }
+              - label: Menu Items
+                name: items
+                widget: list
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { label: Item Name, name: name, widget: string }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: Price, name: price, widget: string, hint: "Example: R 150" }
+                  - label: Dietary Labels
+                    name: dietary
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: Vegetarian, value: vegetarian }
+                      - { label: Vegan, value: vegan }
+                      - { label: Spicy, value: spicy }

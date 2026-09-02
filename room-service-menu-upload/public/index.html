@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123f34" />
+    <meta
+      name="description"
+      content="Room service menu for Holiday Inn Johannesburg Sunnyside Park. Available 24 hours."
+    />
+    <title>Room Service Menu | Sunnyside Park</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <p class="property-name">Holiday Inn Johannesburg Sunnyside Park</p>
+        <div class="title-row">
+          <img class="title-icon" src="/assets/leaf.png" alt="" />
+          <h1 id="menu-title">Room Service Menu</h1>
+        </div>
+        <p class="welcome-copy">Enjoy a relaxed meal from the comfort of your room.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="service-panel" aria-label="Room service information">
+        <div class="service-detail">
+          <span class="service-detail__label">Availability</span>
+          <strong id="availability">24-hour room service</strong>
+        </div>
+        <div class="service-detail service-detail--featured">
+          <span class="service-detail__label">To order</span>
+          <strong id="dial">Dial 17</strong>
+          <span>on your room telephone</span>
+        </div>
+        <div class="service-detail">
+          <span class="service-detail__label">Waiting time</span>
+          <strong id="wait-time">Approximately 30–45 minutes</strong>
+        </div>
+      </section>
+
+      <nav class="category-nav" aria-label="Menu sections">
+        <div class="category-nav__inner" id="category-nav"></div>
+      </nav>
+
+      <div class="menu-shell">
+        <div id="menu-content" aria-live="polite">
+          <p class="loading">Loading the menu…</p>
+        </div>
+
+        <aside class="dietary-key" aria-label="Dietary key">
+          <h2>Dietary key</h2>
+          <div class="dietary-key__items">
+            <span><img src="/assets/leaf.png" alt="" /> Vegetarian</span>
+            <span><span class="vegan-mark" aria-hidden="true">V</span> Vegan</span>
+            <span><img src="/assets/chilli.png" alt="" /> Spicy</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <p>To place an order, dial <strong>17</strong> on your room telephone.</p>
+    </footer>
+  </body>
+</html>

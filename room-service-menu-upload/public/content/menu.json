@@ -1,0 +1,136 @@
+{
+  "title": "Room Service Menu",
+  "service": {
+    "availability": "24-hour room service",
+    "dial": "Dial 17",
+    "waitTime": "Approximately 30–45 minutes"
+  },
+  "categories": [
+    {
+      "name": "Starters",
+      "note": "",
+      "items": [
+        {
+          "name": "Something Light",
+          "description": "Crisp onion rings battered and fried until crunchy.",
+          "price": "R 50",
+          "dietary": ["vegetarian"]
+        },
+        {
+          "name": "Soup of the Day",
+          "description": "Our Soup of the Day is suitable for those following a vegetarian diet. Please ask your waiter what the Chef has prepared today. Served with a fresh bread roll and butter.",
+          "price": "R 75",
+          "dietary": ["vegetarian"]
+        }
+      ]
+    },
+    {
+      "name": "Salads",
+      "note": "",
+      "items": [
+        {
+          "name": "Tabbouleh",
+          "description": "This refreshing Mediterranean dish is crisp, vibrant, nutritious and perfect as a light, healthy meal. Packed with parsley, bulgur wheat, chopped tomatoes and diced onion, it is brought to life by a bright, zesty lemon-olive oil dressing.",
+          "price": "R 95",
+          "dietary": ["vegan"]
+        },
+        {
+          "name": "Greek Salad",
+          "description": "A rustic dish featuring ripe tomato wedges, diced cucumber, sliced red onion, feta cheese and olives. Topped with garlic croutons and dressed with balsamic vinegar and olive oil.",
+          "price": "R 105",
+          "dietary": ["vegetarian"]
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "note": "Please let the waiter know your choice of spaghetti, tagliatelle or penne.",
+      "items": [
+        {
+          "name": "Alfredo",
+          "description": "A rich, creamy and smooth sauce of butter and grated Parmesan cheese, with a touch of garlic, fresh white pepper and nutmeg.",
+          "price": "R 110",
+          "dietary": []
+        },
+        {
+          "name": "Mushroom and Green Peas",
+          "description": "Mushroom and green peas simmered in a reduced smoked paprika and soy oat milk-coconut cream sauce, served topped with smoky coconut shavings.",
+          "price": "R 150",
+          "dietary": ["vegan"]
+        },
+        {
+          "name": "Bolognese",
+          "description": "Rich, slow-cooked sauce of beef, aromatic vegetables, red wine and a touch of tomato.",
+          "price": "R 175",
+          "dietary": []
+        }
+      ]
+    },
+    {
+      "name": "Mains",
+      "note": "All main courses are served with your choice of thick-cut French fries, parsley mashed potato, pap, savoury samp, plain basmati or savoury rice, plus today’s fresh vegetable selection or a side salad.",
+      "items": [
+        {
+          "name": "The Best Bean Balls",
+          "description": "Kidney beans, herbs and spices, oats and chickpea flour well blended and carefully cooked, and served with our homemade tomato sauce.",
+          "price": "R 105",
+          "dietary": ["vegan"]
+        },
+        {
+          "name": "Grilled Chicken Leg Quarter",
+          "description": "Basted with a Portuguese-style sauce and char-grilled.",
+          "price": "R 130",
+          "dietary": ["spicy"]
+        },
+        {
+          "name": "Pork Ribs",
+          "description": "These succulent, fall-off-the-bone pork ribs are grilled to smoky perfection and slathered in an irresistible, glossy and sticky barbecue glaze.",
+          "price": "R 200",
+          "dietary": []
+        },
+        {
+          "name": "Lamb Curry",
+          "description": "Slow-cooked in an aromatic sauce spiced with turmeric, cumin and coriander, ginger, garlic and tomato, finished with fresh coriander and served with a variety of sambals and a papadum.",
+          "price": "R 220",
+          "dietary": ["spicy"]
+        }
+      ]
+    },
+    {
+      "name": "From the Grill",
+      "note": "Our expertly aged steaks are cooked precisely to your preference. Choose your favourite side sauce: mushroom, green peppercorn, cheese or Monkey Gland.",
+      "items": [
+        {
+          "name": "Sirloin",
+          "description": "300g of tender flavour.",
+          "price": "R 200",
+          "dietary": []
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "note": "",
+      "items": [
+        {
+          "name": "Fresh Fruit Salad and Ice Cream",
+          "description": "A refreshing mix of seasonal fresh fruit topped with a velvety scoop of vanilla ice cream.",
+          "price": "R 85",
+          "dietary": []
+        },
+        {
+          "name": "Banana Brownies",
+          "description": "Incredibly delicious, completely plant-based, marbled with peanut butter and sprinkled with cinnamon.",
+          "price": "R 95",
+          "dietary": ["vegan"]
+        },
+        {
+          "name": "Passionfruit Cheesecake",
+          "description": "A refreshing balance of cream cheese and zesty, tart passionfruit set on a crushed gingernut base and spread with passionfruit jelly.",
+          "price": "R 105",
+          "dietary": []
+        }
+      ]
+    }
+  ]
+}
