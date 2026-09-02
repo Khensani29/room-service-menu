@@ -10,7 +10,7 @@ const fallbackMenu = {
 
 const fallbackSettings = {
   font: "montserrat",
-  .logo: "",
+  logo: "",
   hotelName: "Holiday Inn Johannesburg Sunnyside Park",
   welcomeText: "Enjoy a relaxed meal from the comfort of your room.",
   footerText: "To place an order, dial 17 on your room telephone.",
