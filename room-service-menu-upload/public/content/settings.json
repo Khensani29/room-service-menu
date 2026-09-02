@@ -1,11 +1,12 @@
 {
-  "footerImage": "/assets/uploads/screenshot-2026-09-02-225006.png",
-  "highlightColour": "#28715c",
-  "darkColour": "#0b2e27",
-  "mainColour": "#1c4b34",
-  "goldColour": "#b9934b",
-  "headerImage": "/assets/uploads/screenshot-2026-09-02-225023.png",
   "font": "montserrat",
-  "textColour": "#18211e",
-  "backgroundColour": "#f8f5ee"
+  "logo": "",
+  "headerImage": "",
+  "footerImage": "",
+  "darkColour": "#0b2e27",
+  "mainColour": "#123f34",
+  "highlightColour": "#28715c",
+  "goldColour": "#b9934b",
+  "backgroundColour": "#f8f5ee",
+  "textColour": "#18211e"
 }
