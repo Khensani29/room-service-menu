@@ -29,6 +29,7 @@ collections:
 
           - { label: Header Image, name: headerImage, widget: image, required: false }
           - { label: Footer Image, name: footerImage, widget: image, required: false }
+          - { label: Hotel Logo, name: logo, widget: image, required: false }
           - { label: Dark Header Colour, name: darkColour, widget: string }
           - { label: Main Colour, name: mainColour, widget: string }
           - { label: Highlight Colour, name: highlightColour, widget: string }
