@@ -1,0 +1,12 @@
+{
+  "headingFont": "georgia",
+  "bodyFont": "arial",
+  "darkGreen": "#0b2e27",
+  "primaryGreen": "#123f34",
+  "accentGreen": "#28715c",
+  "gold": "#b9934b",
+  "background": "#f8f5ee",
+  "paper": "#fffdf8",
+  "text": "#18211e",
+  "mutedText": "#66706c"
+}

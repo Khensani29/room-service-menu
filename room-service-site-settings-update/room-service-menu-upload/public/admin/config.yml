@@ -1,0 +1,85 @@
+backend:
+  name: github
+  repo: Khensani29/room-service-menu
+  branch: main
+  base_url: https://milners-cms-auth.marketing-a5a.workers.dev
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: room-service-menu-upload/public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: site_settings
+    label: Site Settings
+    files:
+      - name: design
+        label: Fonts and Colours
+        file: room-service-menu-upload/public/content/settings.json
+        format: json
+        fields:
+          - label: Heading Font
+            name: headingFont
+            widget: select
+            options:
+              - { label: Elegant — Georgia, value: georgia }
+              - { label: Classic — Times New Roman, value: times }
+              - { label: Clean — Arial, value: arial }
+              - { label: Modern — Trebuchet, value: trebuchet }
+          - label: Normal Text Font
+            name: bodyFont
+            widget: select
+            options:
+              - { label: Clean — Arial, value: arial }
+              - { label: Elegant — Georgia, value: georgia }
+              - { label: Modern — Trebuchet, value: trebuchet }
+              - { label: Simple — Verdana, value: verdana }
+          - { label: Header Dark Colour, name: darkGreen, widget: string, hint: "Example: #0b2e27" }
+          - { label: Main Colour, name: primaryGreen, widget: string, hint: "Example: #123f34" }
+          - { label: Highlight Colour, name: accentGreen, widget: string, hint: "Example: #28715c" }
+          - { label: Gold Accent Colour, name: gold, widget: string, hint: "Example: #b9934b" }
+          - { label: Page Background Colour, name: background, widget: string, hint: "Example: #f8f5ee" }
+          - { label: Card Background Colour, name: paper, widget: string, hint: "Example: #fffdf8" }
+          - { label: Main Text Colour, name: text, widget: string, hint: "Example: #18211e" }
+          - { label: Lighter Text Colour, name: mutedText, widget: string, hint: "Example: #66706c" }
+
+  - name: room_service
+    label: Room Service
+    files:
+      - name: menu
+        label: Menu and Service Details
+        file: room-service-menu-upload/public/content/menu.json
+        format: json
+        fields:
+          - { label: Menu Title, name: title, widget: string }
+          - label: Service Details
+            name: service
+            widget: object
+            fields:
+              - { label: Availability, name: availability, widget: string }
+              - { label: Ordering Instruction, name: dial, widget: string }
+              - { label: Waiting Time, name: waitTime, widget: string }
+          - label: Menu Sections
+            name: categories
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Section Name, name: name, widget: string }
+              - { label: Section Note, name: note, widget: text, required: false }
+              - label: Menu Items
+                name: items
+                widget: list
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { label: Item Name, name: name, widget: string }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: Price, name: price, widget: string, hint: "Example: R 150" }
+                  - label: Dietary Labels
+                    name: dietary
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: Vegetarian, value: vegetarian }
+                      - { label: Vegan, value: vegan }
+                      - { label: Spicy, value: spicy }
