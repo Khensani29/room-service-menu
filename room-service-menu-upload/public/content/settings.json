@@ -1,15 +1,15 @@
 {
-  "font": "montserrat",
-  "logo": "",
-  "hotelName": "Holiday Inn Johannesburg Sunnyside Park",
-  "welcomeText": "Your favourites, brought right to you.",
-  "footerText": "To place an order, dial 17 on your room telephone.",
-  "headerImage": "",
-  "footerImage": "",
+  "footerImage": "/assets/uploads/screenshot-2026-09-02-225006.png",
+  "highlightColour": "#f0ae37",
   "darkColour": "#0b2e27",
   "mainColour": "#1c4b34",
-  "highlightColour": "#f0ae37",
+  "footerText": "To place an order, dial 17 on your room telephone.",
+  "logo": "/assets/uploads/2.png",
   "goldColour": "#f0ae37",
+  "headerImage": "/assets/uploads/screenshot-2026-09-02-225006.png",
+  "font": "montserrat",
+  "welcomeText": "Your favourites, brought right to you.",
+  "textColour": "#0a1e14",
   "backgroundColour": "#f8f5ee",
-  "textColour": "#0a1e14"
+  "hotelName": "Holiday Inn Johannesburg Sunnyside Park Hotel"
 }
