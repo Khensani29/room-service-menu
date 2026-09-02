@@ -522,3 +522,9 @@ h3,
 .title-icon[hidden] {
   display: none;
 }
+/* Hide selected section placeholders */
+
+#salads .section-banner.image-placeholder,
+#from-the-grill .section-banner.image-placeholder {
+  display: none;
+}
