@@ -396,3 +396,108 @@ footer strong {
     scroll-behavior: auto;
   }
 }
+/* Editable design settings */
+
+:root {
+  --site-font: "Montserrat", Arial, sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+.service-detail--featured strong {
+  font-family: var(--site-font);
+}
+
+/* Header and footer banners */
+
+.site-banner {
+  position: relative;
+  width: min(100% - 2rem, 980px);
+  aspect-ratio: 16 / 5;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  border: 1px solid rgba(185, 147, 75, 0.35);
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.site-banner img,
+.section-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.site-banner--header + .service-panel {
+  margin-top: 1.5rem;
+}
+
+.site-banner--footer {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Menu section banners */
+
+.section-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  margin: 0 0 1.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(185, 147, 75, 0.3);
+  border-radius: 0.85rem;
+}
+
+.section-banner + .section-note {
+  margin-top: 0;
+}
+
+/* Decorative placeholders */
+
+.image-placeholder {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(255, 255, 255, 0.2),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      var(--green-950),
+      var(--green-900)
+    );
+}
+
+.image-placeholder::before,
+.image-placeholder::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+.image-placeholder::before {
+  width: 12rem;
+  height: 12rem;
+  right: -3rem;
+  bottom: -7rem;
+}
+
+.image-placeholder::after {
+  width: 7rem;
+  height: 7rem;
+  left: -2rem;
+  top: -4rem;
+}
+
+@media (max-width: 600px) {
+  .site-banner,
+  .section-banner {
+    aspect-ratio: 16 / 7;
+  }
+}
