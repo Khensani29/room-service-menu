@@ -528,3 +528,10 @@ h3,
 #from-the-grill .section-banner.image-placeholder {
   display: none;
 }
+/* Remove header, footer and Pasta image spaces */
+
+.site-banner--header,
+.site-banner--footer,
+#pasta .section-banner {
+    display: none;
+}
